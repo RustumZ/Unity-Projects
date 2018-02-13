@@ -5,7 +5,7 @@ public class Brick : MonoBehaviour {
 	
 	public AudioClip crack;
 	public Sprite[] hitSprites;
-	public static int breakableCount = -1;
+	public static int breakableCount = 0;
 	public static bool queenDestroyed;
 	
 	private int timesHit = 0;
@@ -47,7 +47,6 @@ public class Brick : MonoBehaviour {
 			if (this.tag == "Queen") {
 				queenDestroyed = true;
 			}
-			print(breakableCount);
 			breakableCount--;
 			levelManager.BrickDestroyed();
 			Destroy(gameObject);
