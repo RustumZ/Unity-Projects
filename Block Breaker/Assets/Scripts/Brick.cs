@@ -48,7 +48,6 @@ public class Brick : MonoBehaviour {
 				queenDestroyed = true;
 			}
 			breakableCount--;
-			Debug.Log(breakableCount);
 			levelManager.BrickDestroyed();
 			Destroy(gameObject);
 		} else {
