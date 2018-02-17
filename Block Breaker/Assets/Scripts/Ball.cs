@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour {
-
+	
+	Text text;
 	Paddle paddle;
 	private Vector3 paddleToBallVector;
 	public bool hasStarted = false;
 
 	// Use this for initialization
 	void Start () {
+		text = Text.FindObjectOfType<Text>();
 		paddle = GameObject.FindObjectOfType<Paddle>();
 		paddleToBallVector = this.transform.position - paddle.transform.position;
 	}
@@ -27,7 +30,7 @@ public class Ball : MonoBehaviour {
 				
 				// the game starts
 				hasStarted = true;
-				
+				Destroy(text.gameObject);
 				// launches the ball
 				this.rigidbody2D.velocity = new Vector2 (2f, 10f);
 			}

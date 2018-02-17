@@ -32,7 +32,7 @@ public class Brick : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {
-		AudioSource.PlayClipAtPoint (crack, transform.position, 0.25f);
+		AudioSource.PlayClipAtPoint (crack, transform.position, 0.03f);
 		if (isBreakable) {
 			HandleHits();
 		}
@@ -48,6 +48,7 @@ public class Brick : MonoBehaviour {
 				queenDestroyed = true;
 			}
 			breakableCount--;
+			Debug.Log(breakableCount);
 			levelManager.BrickDestroyed();
 			Destroy(gameObject);
 		} else {
