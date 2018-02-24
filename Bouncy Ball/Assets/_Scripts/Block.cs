@@ -17,7 +17,6 @@ public class Block : MonoBehaviour {
 	Ball ball;
 	
 	void Start () {
-
 		scoreCalculator = GameObject.FindObjectOfType<ScoreCalculator>();
 		ball = GameObject.FindObjectOfType<Ball>();
 		levelManager = GameObject.FindObjectOfType<LevelManager>();
@@ -38,7 +37,7 @@ public class Block : MonoBehaviour {
 		Move();
 		Rotate ();
 	}
-	
+
 	void Move () {
 		Vector3 moveBlock = new Vector3(blockSpeed, 0f, 0f);
 		this.transform.position -= moveBlock;
@@ -50,13 +49,15 @@ public class Block : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col) {
-		
-		blockSpeed = 0.06f;
-		if (explosionClone == null) {
-			explosionClone = Instantiate (explosion, this.transform.position, Quaternion.identity) as GameObject;
+		if (col.gameObject == ball.gameObject) {
+			blockSpeed = 0.06f;
+
+			if (explosionClone == null) {
+				explosionClone = Instantiate (explosion, this.transform.position, Quaternion.identity) as GameObject;
+			}
+
+			StartCoroutine (DelaySceneChange ());
 		}
-		
-		StartCoroutine (DelaySceneChange());
 	}
 	
 	IEnumerator DelaySceneChange() {
@@ -68,4 +69,3 @@ public class Block : MonoBehaviour {
 		levelManager.LoadLevel("Lose");
 	}
 }
-

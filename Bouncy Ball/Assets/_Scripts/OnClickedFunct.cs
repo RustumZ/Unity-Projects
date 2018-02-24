@@ -4,7 +4,15 @@ using System.Collections;
 public class OnClickedFunct : MonoBehaviour {
 	public GameObject warning;
 
+	string reset;
+
 	public void BestScoreReset () {
+		reset = "Best Score";
+		warning.SetActive(true);
+	}
+
+	public void ResetMoney () {
+		reset = "Money";
 		warning.SetActive(true);
 	}
 	
@@ -13,7 +21,7 @@ public class OnClickedFunct : MonoBehaviour {
 	}
 	
 	public void YesRequest () {
-		PlayerPrefs.SetString("Best Score", "0");
+		PlayerPrefs.SetString(reset, "0");
 		warning.SetActive(false);
 	}
 }
