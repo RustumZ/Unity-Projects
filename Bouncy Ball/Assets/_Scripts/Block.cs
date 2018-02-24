@@ -31,7 +31,7 @@ public class Block : MonoBehaviour {
 			hasPassed = true;
 			
 			scoreCalculator.PlayerScore += 1;
-			PlayerPrefs.SetInt("Score", scoreCalculator.PlayerScore);
+			PlayerPrefs.SetInt ("Score", scoreCalculator.PlayerScore);
 		}
 		
 		Move();
