@@ -6,7 +6,7 @@ public class Cloner : MonoBehaviour {
 	public Color[] BgColor;
 	public Camera cam;
 	public Block block;
-	public Coin coin;
+	public GameObject[] coins;
 
 	public float blockSepDecrease;
 	public float ballSpeedIncrease;
@@ -27,6 +27,7 @@ public class Cloner : MonoBehaviour {
 
 	private int numIncreases;
 	private int currentColor = 0;
+	private int coinIndex = 0;
 
 	private Vector3 coinClonePos;
 	private Vector3 thisClonePos;
@@ -42,6 +43,8 @@ public class Cloner : MonoBehaviour {
 		PlayerPrefs.SetInt("Score", 0);
 		CloneBlock();
 		CloneCoin ();
+
+		print (PlayerPrefs.GetFloat ("Green Money"));
 	}
 	
 	// Update is called once per frame
@@ -52,7 +55,7 @@ public class Cloner : MonoBehaviour {
 			allreadyCloned = false;
 			CloneBlock ();
 		}
-		if (coinClone.transform.position.y <= startCoinYPos - coinSep - 20) {
+		if (coinClone.transform.position.y <= startCoinYPos - coinSep - Coin.fakeDestroyAmount) {
 			coinCloned = false;
 			CloneCoin ();
 		}
@@ -69,9 +72,15 @@ public class Cloner : MonoBehaviour {
 	void CloneCoin () {
 		// clones 1 coin
 		if (!coinCloned) {
+			if (Random.Range (0f, 100f) <= PlayerPrefs.GetFloat ("Green Money")) {
+				coinIndex = 1;
+			} else {
+				coinIndex = 0;
+			}
+
 			coinSep = Random.Range (coinSepMin, coinSepMax);
 			coinClonePos = new Vector3 (Random.Range (0.5f, 14f), startCoinYPos, 0f);
-			coinClone = Instantiate (coin.gameObject, coinClonePos, Quaternion.identity) as GameObject;
+			coinClone = Instantiate (coins[coinIndex], coinClonePos, Quaternion.identity) as GameObject;
 			coinSep = Random.Range (coinSepMin, coinSepMax);
 			coinCloned = true;
 		}

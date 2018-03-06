@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54842872200616596}
   - component: {fileID: 114973043691167688}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Red Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fbbf27b7179cb49f88847d878b551aa1, type: 2}
+  - {fileID: 2100000, guid: d5f6d5eb40cf8482f86f696d22799347, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationY: 2
   rotationX: 2
-  speed: 0.1
+  speed: 0.07
+  coinValue: 3
 --- !u!135 &135365650754265710
 SphereCollider:
   m_ObjectHideFlags: 1

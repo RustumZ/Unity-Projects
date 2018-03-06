@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OnClickedFunct : MonoBehaviour {
+public class SettingsManager : MonoBehaviour {
 	public GameObject warning;
 
 	string reset;

@@ -26,11 +26,6 @@ public class Brick : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	void OnCollisionEnter2D (Collision2D collision) {
 		AudioSource.PlayClipAtPoint (crack, transform.position, 0.03f);
 		if (isBreakable) {

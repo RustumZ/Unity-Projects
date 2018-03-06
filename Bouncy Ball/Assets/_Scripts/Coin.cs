@@ -8,18 +8,23 @@ public class Coin : MonoBehaviour {
 	private Ball ball;
 	private Text moneyText;
 
-	static int money = 0;
 	public float rotationY;
 	public float rotationX;
 	public float speed;
 
+	public int coinValue;
+
+	static int money = 0;
+	static public float fakeDestroyAmount;
+
 	// Use this for initialization
 	void Start () {
 		ball = GameObject.FindObjectOfType<Ball> ();
-		moneyText = Text.FindObjectOfType<Text> ();
+		moneyText = ball.money;
 
 		money = PlayerPrefs.GetInt("Money");
-		moneyText.text = "$" + PlayerPrefs.GetInt("Money").ToString ();
+		moneyText.text = PlayerPrefs.GetInt("Money").ToString ();
+		fakeDestroyAmount = 0f;
 	}
 	
 	// Update is called once per frame
@@ -33,11 +38,12 @@ public class Coin : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject == ball.gameObject) {
-			money++;
+			money += coinValue;
 			PlayerPrefs.SetInt ("Money", money);
-			moneyText.text = "$" + PlayerPrefs.GetInt("Money").ToString ();
+			moneyText.text = PlayerPrefs.GetInt("Money").ToString ();
 
-			Vector3 fakeDestory = new Vector3 (0f, 20f, 0f);
+			fakeDestroyAmount = 20f;
+			Vector3 fakeDestory = new Vector3 (0f, fakeDestroyAmount, 0f);
 			transform.position -= fakeDestory;
 		}
 	}

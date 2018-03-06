@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 
 	public Block block;
 	public float speed;
+	public Text money;
 	
 	// Use this for initialization
 	void Start () {

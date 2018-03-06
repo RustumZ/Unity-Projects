@@ -6,6 +6,7 @@ public class Block : MonoBehaviour {
 	public static float blockSpeed = 0.06f;
 	public bool hasPassed = false;
 	public GameObject explosion;
+	public AudioClip boomSound;
 
 	float rotationZ;
 	float rotationY;
@@ -51,6 +52,7 @@ public class Block : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject == ball.gameObject) {
 			blockSpeed = 0.06f;
+			AudioSource.PlayClipAtPoint (boomSound, transform.position, 1f);
 
 			if (explosionClone == null) {
 				explosionClone = Instantiate (explosion, this.transform.position, Quaternion.identity) as GameObject;
