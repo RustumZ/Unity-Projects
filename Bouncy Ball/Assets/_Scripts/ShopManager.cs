@@ -49,7 +49,7 @@ public class ShopManager : MonoBehaviour {
 		if (PayMoney(cost)) {
 			PlayerPrefs.SetFloat ("Green Money", 10);
 
-			GameObject MoreMoneyUpgrade = Upgrades.transform.Find
+			//GameObject MoreMoneyUpgrade = Upgrade.transform.Find ("MoreMoney Upgrade");
 
 		}
 	}
