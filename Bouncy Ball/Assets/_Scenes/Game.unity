@@ -110,60 +110,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &118471884
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.010368264
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.9125399
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.40819883
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -0.023178544
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 182.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159613970322576, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 48.2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &380268814
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +477,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
@@ -593,6 +539,10 @@ Prefab:
     - target: {fileID: 2094624, guid: 7b4f1ac5f794647b1a7902a15009a78e, type: 2}
       propertyPath: m_AllowMSAA
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094624, guid: 7b4f1ac5f794647b1a7902a15009a78e, type: 2}
+      propertyPath: m_ClearFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b4f1ac5f794647b1a7902a15009a78e, type: 2}
@@ -713,8 +663,8 @@ MonoBehaviour:
   - {fileID: 1381144455796162, guid: 4d2dd397d05674ecba82996a5704e4a7, type: 2}
   - {fileID: 1381144455796162, guid: bf9c41974ee244e0493d157e6be04b26, type: 2}
   blockSepDecrease: 0.6
-  ballSpeedIncrease: 0.03
-  BlockSpeedIncrease: 0.03
+  ballSpeedIncrease: 0.01
+  BlockSpeedIncrease: 0.01
   BlockSep: 6
   increaseAmount: 10
   coinSepMin: 30

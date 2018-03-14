@@ -57,6 +57,9 @@ public class Brick : MonoBehaviour {
 		if (hitSprites[spriteIndex]) {
 			this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
 		}
+		else {
+		Debug.LogError("Brick sprite missing");
+		}
 	}
 	
 	// TODO Remove this method once we actually win!

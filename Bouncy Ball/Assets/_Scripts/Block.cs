@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Block : MonoBehaviour {
 
-	public static float blockSpeed = 0.06f;
+	public static float blockSpeed = 0.07f;
 	public bool hasPassed = false;
 	public GameObject explosion;
 	public AudioClip boomSound;

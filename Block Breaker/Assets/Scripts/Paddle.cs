@@ -4,6 +4,8 @@ using System.Collections;
 public class Paddle : MonoBehaviour {
 	
 	public bool autoPlay = false;
+	public float minPaddleX, maxPaddleX;
+	
 	
 	Ball ball;
 	// Use this for initialization
@@ -23,14 +25,14 @@ public class Paddle : MonoBehaviour {
 	void MoveWithMouse () {
 			Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
 			float mousePosInX = Input.mousePosition.x / Screen.width * 16;
-			paddlePos.x = Mathf.Clamp(mousePosInX, 0.5f, 15.5f);
+			paddlePos.x = Mathf.Clamp(mousePosInX, minPaddleX, maxPaddleX);
 			this.transform.position = paddlePos;
 	}
 	
 	void AutoPlay () {
 		Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
 		Vector3 ballPos = ball.transform.position;
-		paddlePos.x = Mathf.Clamp(ballPos.x, 0.5f, 15.5f);
+		paddlePos.x = Mathf.Clamp(ballPos.x, minPaddleX, maxPaddleX);
 		this.transform.position = paddlePos;
 	}
 }

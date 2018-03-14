@@ -20,7 +20,9 @@ public class Coin : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ball = GameObject.FindObjectOfType<Ball> ();
-		moneyText = ball.money;
+		if (ball) {
+			moneyText = ball.money;
+		}
 
 		money = PlayerPrefs.GetInt("Money");
 		moneyText.text = PlayerPrefs.GetInt("Money").ToString ();
