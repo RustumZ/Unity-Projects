@@ -15,8 +15,10 @@ public class Ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		PlayerPrefs.SetFloat ("Ball Speed", speed);
+
 		float mouseXPos = Input.mousePosition.x / 800 * 16;
-		Vector3 ballSpeed = new Vector3(0f, speed, 0f);
+		Vector3 ballSpeed = new Vector3(0f, PlayerPrefs.GetFloat("Ball Speed", speed), 0f);
 		Vector3 ballX = new Vector3(Mathf.Clamp(mouseXPos, 0.5f, 14f), this.transform.position.y, 0f);
 		
 		this.transform.position = ballX;
