@@ -7,6 +7,7 @@ public class Brick : MonoBehaviour {
 	public Sprite[] hitSprites;
 	public static int breakableCount = 0;
 	public static bool queenDestroyed;
+	public GameObject smoke;
 	
 	private int timesHit = 0;
 	private LevelManager levelManager;
@@ -44,6 +45,9 @@ public class Brick : MonoBehaviour {
 			}
 			breakableCount--;
 			levelManager.BrickDestroyed();
+			GameObject smokeClone = Instantiate (smoke, gameObject.transform.position, Quasternion.Euler(0, 180, 0)) as GameObject;
+			
+			
 			Destroy(gameObject);
 		} else {
 			LoadSprites();

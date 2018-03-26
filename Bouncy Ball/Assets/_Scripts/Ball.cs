@@ -19,12 +19,12 @@ public class Ball : MonoBehaviour {
 
 		float mouseXPos = Input.mousePosition.x / 800 * 16;
 		Vector3 ballSpeed = new Vector3(0f, PlayerPrefs.GetFloat("Ball Speed", speed), 0f);
-		Vector3 ballX = new Vector3(Mathf.Clamp(mouseXPos, 0.5f, 14f), this.transform.position.y, 0f);
+		Vector3 ballX = new Vector3(Mathf.Clamp(mouseXPos, 0.96f, 13.5f), this.transform.position.y, 0f);
 		
 		this.transform.position = ballX;
 		this.transform.position += ballSpeed;
 
-		if (this.transform.position.y <= 0.5 || this.transform.position.y >= 11.5) {
+		if (this.transform.position.y <= 0.8 || this.transform.position.y >= 11.2) {
 			speed *= -1;
 		}
 	}

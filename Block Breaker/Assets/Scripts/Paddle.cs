@@ -23,10 +23,10 @@ public class Paddle : MonoBehaviour {
 	}
 	
 	void MoveWithMouse () {
-			Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
-			float mousePosInX = Input.mousePosition.x / Screen.width * 16;
-			paddlePos.x = Mathf.Clamp(mousePosInX, minPaddleX, maxPaddleX);
-			this.transform.position = paddlePos;
+		Vector3 paddlePos = new Vector3 (0.5f, this.transform.position.y, 0f);
+		float mousePosInX = Input.mousePosition.x / Screen.width * 16;
+		paddlePos.x = Mathf.Clamp(mousePosInX, minPaddleX, maxPaddleX);
+		this.transform.position = paddlePos;
 	}
 	
 	void AutoPlay () {

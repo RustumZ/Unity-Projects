@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class ScoreCalculator : MonoBehaviour {
 
@@ -10,16 +11,15 @@ public class ScoreCalculator : MonoBehaviour {
 	int bestScoreAsInt;
 	
 	void Start () {
-		
 		scoreText = GetComponent<UnityEngine.UI.Text>();
 		PlayerScore = 0;
+		PlayerPrefs.SetString("Best Score", (PlayerScore).ToString());
 	}
 	
 	void Update () {
-		bestScoreAsInt = int.Parse(PlayerPrefs.GetString("Best Score"));
-		
+		bestScoreAsInt = int.Parse (PlayerPrefs.GetString ("Best Score"));
 		// display the score
-		scoreText.text = "Score: " + PlayerScore.ToString();
+		scoreText.text = "Score: " + PlayerScore.ToString ();
 	}
 	
 	public void CalculateBestScore () {
