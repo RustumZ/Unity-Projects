@@ -9,6 +9,7 @@ public class Brick : MonoBehaviour {
 	public static bool queenDestroyed;
 	public GameObject smoke;
 	
+	private int maxHits;
 	private int timesHit = 0;
 	private LevelManager levelManager;
 	private bool isBreakable;
@@ -28,7 +29,6 @@ public class Brick : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {
-		AudioSource.PlayClipAtPoint (crack, transform.position, 0.03f);
 		if (isBreakable) {
 			HandleHits();
 		}
@@ -37,16 +37,19 @@ public class Brick : MonoBehaviour {
 	
 	void HandleHits () {
 		timesHit++;
-		int maxHits = hitSprites.Length + 1;
+		maxHits = hitSprites.Length + 1;
 		
 		if (timesHit >= maxHits) {
+			AudioSource.PlayClipAtPoint (crack, transform.position, 0.8f);
+			
 			if (this.tag == "Queen") {
 				queenDestroyed = true;
 			}
 			breakableCount--;
 			levelManager.BrickDestroyed();
-			GameObject smokeClone = Instantiate (smoke, gameObject.transform.position, Quasternion.Euler(0, 180, 0)) as GameObject;
 			
+			GameObject smokeClone = Instantiate (smoke, transform.position, Quaternion.Euler(0, 180, 0)) as GameObject;
+			smokeClone.particleSystem.startColor = gameObject.GetComponent<SpriteRenderer>().color;
 			
 			Destroy(gameObject);
 		} else {
