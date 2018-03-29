@@ -64,6 +64,7 @@ public class Block : MonoBehaviour {
 	
 	IEnumerator DelaySceneChange() {
 		ball.gameObject.SetActive(false);
+		scoreCalculator.CalculateBestScore ();
 		
 		yield return new WaitForSeconds(1.5f);
 		

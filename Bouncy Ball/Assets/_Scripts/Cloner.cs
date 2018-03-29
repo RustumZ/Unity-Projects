@@ -102,13 +102,6 @@ public class Cloner : MonoBehaviour {
 			currentColor++;
 			whenLevelIncreases += increaseAmount * 1.2f;
 			numIncreases++;
-
-//			if (numIncreases <= 4) {
-//				Block.blockSpeed += BlockSpeedIncrease;
-//
-//			} else if (numIncreases <= 8) {
-//				BlockSep -= blockSepDecrease;
-//			}
 		}
 	}
 }
