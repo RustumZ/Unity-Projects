@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
 	public void LoadLevel(string name) {
 		Brick.breakableCount = 0;
-		Application.LoadLevel(name);
+		SceneManager.LoadScene (name);
 	}
 	
 	public void LoadNextLevel() {
-		Application.LoadLevel(Application.loadedLevel + 1);
+		SceneManager.LoadScene (sceneBuildIndex: + 1);
 	}
 	
 	public void BrickDestroyed() {

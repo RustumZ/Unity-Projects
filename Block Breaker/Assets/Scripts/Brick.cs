@@ -40,7 +40,7 @@ public class Brick : MonoBehaviour {
 		maxHits = hitSprites.Length + 1;
 		
 		if (timesHit >= maxHits) {
-			AudioSource.PlayClipAtPoint (crack, transform.position, 0.8f);
+			AudioSource.PlayClipAtPoint (crack, transform.position, 0.4f);
 			
 			if (this.tag == "Queen") {
 				queenDestroyed = true;
@@ -49,7 +49,7 @@ public class Brick : MonoBehaviour {
 			levelManager.BrickDestroyed();
 			
 			GameObject smokeClone = Instantiate (smoke, transform.position, Quaternion.Euler(0, 180, 0)) as GameObject;
-			smokeClone.particleSystem.startColor = gameObject.GetComponent<SpriteRenderer>().color;
+			smokeClone.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
 			
 			Destroy(gameObject);
 		} else {
