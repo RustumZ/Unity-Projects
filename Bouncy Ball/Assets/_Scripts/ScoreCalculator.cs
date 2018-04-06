@@ -20,8 +20,11 @@ public class ScoreCalculator : MonoBehaviour {
 	}
 	
 	public void CalculateBestScore () {
+		if (PlayerPrefs.GetString ("Best Score") == "") {
+			PlayerPrefs.SetString("Best Score", "0");
+		}
 		if (PlayerScore >= int.Parse(PlayerPrefs.GetString("Best Score"))) {
-			PlayerPrefs.SetString("Best Score", (PlayerScore).ToString());
+			PlayerPrefs.SetString("Best Score", PlayerScore.ToString());
 		}
 		
 	}
