@@ -22,11 +22,10 @@ public class Coin : MonoBehaviour {
 		ball = GameObject.FindObjectOfType<Ball> ();
 		if (ball) {
 			moneyText = ball.money;
+			money = PlayerPrefs.GetInt("Money");
+			moneyText.text = PlayerPrefs.GetInt("Money").ToString ();
+			fakeDestroyAmount = 0f;
 		}
-
-		money = PlayerPrefs.GetInt("Money");
-		moneyText.text = PlayerPrefs.GetInt("Money").ToString ();
-		fakeDestroyAmount = 0f;
 	}
 	
 	// Update is called once per frame
