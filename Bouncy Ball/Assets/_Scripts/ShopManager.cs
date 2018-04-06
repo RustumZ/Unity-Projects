@@ -14,7 +14,6 @@ public class ShopManager : MonoBehaviour {
 	private int money;
 
 	void Start () {
-		PlayerPrefs.SetInt ("Money", 250);
 
 		money = PlayerPrefs.GetInt ("Money");
 		playerMoney.text = "$" + money.ToString ();

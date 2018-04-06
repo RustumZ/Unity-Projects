@@ -67,8 +67,6 @@ public class Block : MonoBehaviour {
 		scoreCalculator.CalculateBestScore ();
 		
 		yield return new WaitForSeconds(1.5f);
-		
-		scoreCalculator.CalculateBestScore();
 		levelManager.LoadLevel("Lose");
 	}
 }
