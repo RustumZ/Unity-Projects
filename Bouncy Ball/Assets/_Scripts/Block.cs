@@ -63,10 +63,10 @@ public class Block : MonoBehaviour {
 	}
 	
 	IEnumerator DelaySceneChange() {
-		ball.gameObject.SetActive(false);
-		scoreCalculator.CalculateBestScore ();
+		Destroy(ball.gameObject);
 		
 		yield return new WaitForSeconds(1.5f);
+		scoreCalculator.CalculateBestScore ();
 		levelManager.LoadLevel("Lose");
 	}
 }
