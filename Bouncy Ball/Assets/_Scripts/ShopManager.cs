@@ -14,7 +14,7 @@ public class ShopManager : MonoBehaviour {
 	private int money;
 
 	void Start () {
-
+		PlayerPrefs.SetInt ("Money", 200);
 		money = PlayerPrefs.GetInt ("Money");
 		playerMoney.text = "$" + money.ToString ();
 	}
@@ -47,8 +47,9 @@ public class ShopManager : MonoBehaviour {
 	public void MoneyUpgrade (int cost) {
 		if (PayMoney(cost)) {
 			PlayerPrefs.SetFloat ("Green Money", 10);
-
-			//GameObject MoreMoneyUpgrade = Upgrade.transform.Find ("MoreMoney Upgrade");
+			Transform HasBought = Upgrades.transform.Find ("MoreMoney Upgrade").Find ("Has Bought");
+			HasBought.gameObject.SetActive (true);
+			print (HasBought.gameObject.activeSelf);
 
 		}
 	}
