@@ -18,6 +18,9 @@ public class Block : MonoBehaviour {
 	Ball ball;
 	
 	void Start () {
+		print (PlayerPrefs.GetFloat ("Take Time"));
+		print (blockSpeed);
+		//blockSpeed -= (blockSpeed / 100 * PlayerPrefs.GetFloat("Take Time"));
 		scoreCalculator = GameObject.FindObjectOfType<ScoreCalculator>();
 		ball = GameObject.FindObjectOfType<Ball>();
 		levelManager = GameObject.FindObjectOfType<LevelManager>();

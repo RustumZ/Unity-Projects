@@ -46,11 +46,16 @@ public class ShopManager : MonoBehaviour {
 
 	public void MoneyUpgrade (int cost) {
 		if (PayMoney(cost)) {
-			PlayerPrefs.SetFloat ("Green Money", 10);
-			Transform HasBought = Upgrades.transform.Find ("MoreMoney Upgrade").Find ("Has Bought");
-			HasBought.gameObject.SetActive (true);
-			print (HasBought.gameObject.activeSelf);
+			PlayerPrefs.SetFloat ("Green Money", 25);
+//			Transform HasBought = Upgrades.transform.Find ("MoreMoney Upgrade").Find ("Has Bought");
+//			HasBought.gameObject.SetActive (true);
+//			print (HasBought.gameObject.activeSelf);
 
+		}
+	}
+	public void TakeTime (int cost) {
+		if (PayMoney (cost)) {
+			PlayerPrefs.SetFloat ("Take Time", 15);
 		}
 	}
 }
