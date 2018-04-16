@@ -53,6 +53,7 @@ public class Block : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col) {
+		print ("trigger!!");
 		if (col.gameObject == ball.gameObject) {
 			blockSpeed = 0.06f;
 			AudioSource.PlayClipAtPoint (boomSound, transform.position, 1f);

@@ -50,6 +50,7 @@ public class Cloner : MonoBehaviour {
 		IncreaseDiff ();
 
 		if (clone.transform.position.x <= blockStartPoint - BlockSep) {
+			print (clone.transform.position.x);
 			allreadyCloned = false;
 			CloneBlock ();
 		}
