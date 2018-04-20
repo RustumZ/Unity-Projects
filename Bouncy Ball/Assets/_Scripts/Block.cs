@@ -31,6 +31,9 @@ public class Block : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (this.transform.position.x <= -30) {
+			Destroy (gameObject);
+		}
 		if (ball != null && hasPassed == false && ball.transform.position.x > this.transform.position.x) {
 			hasPassed = true;
 			
@@ -53,7 +56,6 @@ public class Block : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col) {
-		print ("trigger!!");
 		if (col.gameObject == ball.gameObject) {
 			blockSpeed = 0.06f;
 			AudioSource.PlayClipAtPoint (boomSound, transform.position, 1f);
@@ -63,6 +65,7 @@ public class Block : MonoBehaviour {
 			}
 
 			StartCoroutine (DelaySceneChange ());
+
 		}
 	}
 	

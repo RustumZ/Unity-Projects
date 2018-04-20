@@ -37,6 +37,7 @@ public class Cloner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		print (PlayerPrefs.GetFloat ("Green Money"));
 		coinSep = Random.Range (coinSepMin, coinSepMax);
 
 		whenLevelIncreases = increaseAmount;

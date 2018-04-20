@@ -9,6 +9,7 @@ public class MusicVolume : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		this.slider.value = PlayerPrefs.GetFloat ("Slider");
 		if (GameObject.FindObjectOfType<MusicPlayer>() != null) {
 			audioSource = GameObject.FindObjectOfType<MusicPlayer>().GetComponent<AudioSource>();
 		} else {
@@ -18,9 +19,11 @@ public class MusicVolume : MonoBehaviour {
 	}
 	
 	public void ChangeVolume () {
-		
+		PlayerPrefs.SetFloat ("Slider", this.slider.value);
+
 		if (GameObject.FindObjectOfType<MusicPlayer>() != null) {
-			audioSource.volume = this.slider.value;
+			print (PlayerPrefs.GetFloat ("Slider"));
+			audioSource.volume = PlayerPrefs.GetFloat ("Slider");
 		}
 	}
 }
