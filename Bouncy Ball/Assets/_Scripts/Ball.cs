@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 
 	public float speed;
 	public Text money;
+
 	
 	// Update is called once per frame
 	void Update () {

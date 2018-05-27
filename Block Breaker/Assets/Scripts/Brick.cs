@@ -68,10 +68,4 @@ public class Brick : MonoBehaviour {
 		Debug.LogError("Brick sprite missing");
 		}
 	}
-	
-	// TODO Remove this method once we actually win!
-	
-	void SimulateWin () {
-		levelManager.LoadNextLevel();
-	}
 }

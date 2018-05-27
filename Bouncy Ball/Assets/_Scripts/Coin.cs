@@ -38,7 +38,7 @@ public class Coin : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col) {
-		if (col.gameObject == ball.gameObject) {
+		if (ball.gameObject == null || col.gameObject == ball.gameObject) {
 			money += coinValue;
 			PlayerPrefs.SetInt ("Money", money);
 			moneyText.text = PlayerPrefs.GetInt("Money").ToString ();

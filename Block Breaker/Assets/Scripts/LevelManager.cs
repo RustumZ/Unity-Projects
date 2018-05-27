@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour {
 	
 	public void BrickDestroyed() {
 		if (Brick.breakableCount <= 0 || Brick.queenDestroyed) {
+			print ("loading next level");
 			Brick.breakableCount = 0;
 			LoadNextLevel();
 		}

@@ -14,7 +14,7 @@ public class Block : MonoBehaviour {
 
 	GameObject explosionClone;
 	ScoreCalculator scoreCalculator;
-	LevelManager levelManager;
+	SceneController levelManager;
 	Ball ball;
 	
 	void Start () {
@@ -23,7 +23,7 @@ public class Block : MonoBehaviour {
 		//blockSpeed -= (blockSpeed / 100 * PlayerPrefs.GetFloat("Take Time"));
 		scoreCalculator = GameObject.FindObjectOfType<ScoreCalculator>();
 		ball = GameObject.FindObjectOfType<Ball>();
-		levelManager = GameObject.FindObjectOfType<LevelManager>();
+		levelManager = GameObject.FindObjectOfType<SceneController>();
 		
 		rotationZ = Random.Range(-1f, 1f);
 		rotationY = Random.Range(-1f, 1f);
